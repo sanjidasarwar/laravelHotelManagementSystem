@@ -56,7 +56,10 @@
                                             @csrf
 											<div class="col-12">
                                                 <x-input-label class="form-label" for="login" :value="__('Email / Name / Phone Number')" />
-                                                <x-text-input id="login" class="form-control" type="text" name="login" :value="old('login')" required autofocus autocomplete="username" />
+                                                <input id="login" class="form-control @error('login') is-invalid @enderror" type="text" name="login" :value="old('login')" required autofocus autocomplete="username" />
+												@error('login')
+													<span class="text-danger">{{$message}}</span>
+												@enderror
 											</div>
 											<div class="col-12">
                                                 <x-input-label class="form-label" for="password" :value="__('Password')" />
