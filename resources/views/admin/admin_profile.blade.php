@@ -93,13 +93,13 @@
                                     <h6 class="mb-0">Photo</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="file" name="photo" class="form-control" />
+                                    <input id="uploadImg" type="file" name="photo" class="form-control" onchange="previewImage(event)"/>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-9">
-                                    <img src="{{!empty($profileDetails->photo) ? url('upload/admin_images/'.$profileDetails->photo) : url('upload/no_image.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="80">
+                                    <img id="preview" src="{{!empty($profileDetails->photo) ? url('upload/admin_images/'.$profileDetails->photo) : url('upload/no_image.jpg')}}" alt="Admin" class="rounded-circle p-1 bg-primary" width="80">
                                 </div>
                             </div>
                             <div class="row">
@@ -114,4 +114,19 @@
             </div>
         </div>
     </div>
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    const previewImg = document.getElementById('preview');
+                    previewImg.src = e.target.result;
+                };
+    
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 @endsection
