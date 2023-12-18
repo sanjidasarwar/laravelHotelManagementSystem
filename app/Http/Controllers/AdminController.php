@@ -39,6 +39,9 @@ class AdminController extends Controller
 
         if($request->file('photo')){
             $file =$request->file('photo');
+            // to remove previous image
+            @unlink(public_path('upload/admin_images/').$profileDetails->photo);
+
             $fileName=date('YmdHi').$file->getClientOriginalName();
 
             $file->move(public_path('upload/admin_images'), $fileName);
@@ -54,6 +57,12 @@ class AdminController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+    public function adminChangePassword(){
+        $id = Auth::user()->id;
+        $profileDetails = User::find($id);
+        return view('admin.admin_change_password', compact('profileDetails'));
     }
 
     public function adminLogin(){
