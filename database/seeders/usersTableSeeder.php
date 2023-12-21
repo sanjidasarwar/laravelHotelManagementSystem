@@ -20,7 +20,7 @@ class usersTableSeeder extends Seeder
             [
                 'name'=>'admin',
                 'email'=>'admin@gmail.com',
-                'password'=>Hash::make('111'),
+                'password'=>Hash::make('222'),
                 'role'=>'admin',
                 'status'=>'active'
             ],

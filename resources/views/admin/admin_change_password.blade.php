@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                   <form action="{{route('admin.profile.store')}}" method="post" enctype="multipart/form-data">
+                   <form action="{{route('admin.password.update')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card">
                         <div class="card-body">
@@ -85,7 +85,10 @@
                                     <h6 class="mb-0">Confirm New Password</h6>
                                 </div>
                                 <div class="col-sm-8 text-secondary">
-                                    <input type="password" id="confirm_password" name="confirm_password" class="form-control"  />
+                                    <input type="password" id="confirm_password" name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  />
+                                    @error('confirm_password')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                                 </div>
                             </div>
                             <div class="row">
