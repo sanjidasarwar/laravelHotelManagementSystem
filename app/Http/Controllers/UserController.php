@@ -18,4 +18,14 @@ class UserController extends Controller
         $profileDetails = User::find($id);
         return view('frontend.user.edit_profile', compact('profileDetails'));
     }
+
+    public function userLogout(Request $request){
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+    }
 }
