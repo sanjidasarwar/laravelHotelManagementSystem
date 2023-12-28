@@ -33,76 +33,40 @@
 
                         <section class="checkout-area pb-70">
                             <div class="container">
-                                <form>
+                                <form action="{{route('user.password.update')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="row">
                                       <div class="col-lg-12 col-md-12">
                                         <div class="billing-details">
                                           <h3 class="title">Change Password</h3>
                 
                                           <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                              <div class="form-group">
-                                                <label
-                                                  >First Name
-                                                  <span class="required">*</span></label
-                                                >
-                                                <input type="text" class="form-control" />
-                                              </div>
-                                            </div>
-                
-                                            <div class="col-lg-6 col-md-6">
-                                              <div class="form-group">
-                                                <label
-                                                  >Last Name
-                                                  <span class="required">*</span></label
-                                                >
-                                                <input type="text" class="form-control" />
-                                              </div>
-                                            </div>
-                
+
                                             <div class="col-lg-12 col-md-12">
                                               <div class="form-group">
-                                                <label>Company Name</label>
-                                                <input type="text" class="form-control" />
+                                                <label>Old Password</label>
+                                                <input type="password" id="old_password" name="old_password" class="form-control @error('old_password') is-invalid @enderror"  />
+                                                @error('old_password')
+                                                    <span class="text-danger">{{$message}}</span>
+                                                @enderror
                                               </div>
                                             </div>
-                
-                                            <div class="col-lg-6 col-md-6">
+                                            <div class="col-lg-12 col-md-12">
                                               <div class="form-group">
-                                                <label
-                                                  >Email Address
-                                                  <span class="required">*</span></label
-                                                >
-                                                <input type="email" class="form-control" />
+                                                <label>New Password</label>
+                                                <input type="password" id="new_password" name="new_password" class="form-control @error('new_password') is-invalid @enderror"  />
+                                                @error('new_password')
+                                                    <span class="text-danger">{{$message}}</span>
+                                                @enderror
                                               </div>
                                             </div>
-                
-                                            <div class="col-lg-6 col-md-6">
+                                            <div class="col-lg-12 col-md-12">
                                               <div class="form-group">
-                                                <label
-                                                  >Phone <span class="required">*</span></label
-                                                >
-                                                <input type="text" class="form-control" />
-                                              </div>
-                                            </div>
-                
-                                            <div class="col-lg-12 col-md-6">
-                                              <div class="form-group">
-                                                <label
-                                                  >User Profile
-                                                  <span class="required">*</span></label
-                                                >
-                                                <input type="file" class="form-control" />
-                                              </div>
-                                            </div>
-                
-                                            <div class="col-lg-12 col-md-6">
-                                              <div class="form-group">
-                                                <label
-                                                  >Town / City
-                                                  <span class="required">*</span></label
-                                                >
-                                                <input type="text" class="form-control" />
+                                                <label>Confirm New Password</label>
+                                                <input type="password" id="confirm_password" name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  />
+                                                @error('confirm_password')
+                                                <span class="text-danger">{{$message}}</span>
+                                                 @enderror
                                               </div>
                                             </div>
                 

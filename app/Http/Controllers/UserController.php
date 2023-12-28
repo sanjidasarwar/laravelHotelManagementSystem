@@ -47,11 +47,46 @@ class UserController extends Controller
 
         return redirect()->back()->with($notification);
     }
+    
     public function userChangePassword(){
         $id = Auth::user()->id;
         $profileDetails = User::find($id);
         return view('frontend.user.user_change_password', compact('profileDetails'));
     }
+
+    public function userPasswordUpdate(Request $request){
+        // dd($request->old_password);          
+
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required ',
+            'confirm_password' => 'required | same:new_password'
+        ]);
+
+        if(!Hash::check($request->old_password, Auth::user()->password)){          
+
+            $notification = array(
+                'message' => 'Old Password Does not Match',
+                'alert-type' =>'error'
+            );
+    
+            return back()->with($notification);
+        }
+
+        //  update new password
+              User::whereId(Auth::user()->id)->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+
+            $notification = array(
+                'message' => 'Password Change Successfully',
+                'alert-type' =>'success'
+            );
+
+            return back()->with($notification);
+       
+    }
+
     public function userLogout(Request $request){
         Auth::guard('web')->logout();
 
