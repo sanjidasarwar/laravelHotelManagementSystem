@@ -10,4 +10,8 @@ class TeamController extends Controller
     public function allTeam(){
         return view('backend.team.index');
     }
+
+    public function addTeam(){
+        return view('backend.team.create');
+    }
 }
