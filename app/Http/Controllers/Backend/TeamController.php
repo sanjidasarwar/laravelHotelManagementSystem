@@ -22,7 +22,7 @@ class TeamController extends Controller
     }
 
     public function editTeam($id){
-        $team =Team::find($id);
+        $team =Team::findOrFail($id);
         return view('backend.team.edit', compact('team'));
     }
 
@@ -34,18 +34,19 @@ class TeamController extends Controller
             $image = $manager->read($file);
             $image->resize(550, 670)->save('upload/team/'.$name_gen);
             $save_url='upload/team/'.$name_gen;
+            Team::insert([
+                'name'=> $request->name,
+                'position' => $request->position,
+                'facebook' => $request->facebook,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter,
+                'pinterest' => $request->pinterest,
+                'image'=>  $save_url,
+                'created_at'=> Carbon::now()
+            ]);
         }
         
-        Team::insert([
-            'name'=> $request->name,
-            'position' => $request->position,
-            'facebook' => $request->facebook,
-            'instagram' => $request->instagram,
-            'twitter' => $request->twitter,
-            'pinterest' => $request->pinterest,
-            'image'=>  $save_url,
-            'created_at'=> Carbon::now()
-        ]);
+        
 
         $notification = array(
             'message' => 'Team is Added Successfully',
@@ -53,5 +54,53 @@ class TeamController extends Controller
         );
 
         return redirect()->route('all.team')->with($notification);
+    }
+
+    public function updateTeam(Request $request){
+        $team_id=$request->id;
+
+        if($request->file('image')){
+            $file =$request->file('image');
+            $name_gen=hexdec(uniqid()).'.'.$file->getClientOriginalExtension();
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($file);
+            $image->resize(550, 670)->save('upload/team/'.$name_gen);
+            $save_url='upload/team/'.$name_gen;
+            Team::findOrFail($team_id)->update([
+                'name'=> $request->name,
+                'position' => $request->position,
+                'facebook' => $request->facebook,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter,
+                'pinterest' => $request->pinterest,
+                'image'=>  $save_url,
+                'created_at'=> Carbon::now()
+            ]);
+
+            $notification = array(
+                'message' => 'Team is Updated Successfully with Image',
+                'alert-type' =>'success'
+            );
+    
+            return redirect()->route('all.team')->with($notification);
+        }else{
+            Team::findOrFail($team_id)->update([
+                'name'=> $request->name,
+                'position' => $request->position,
+                'facebook' => $request->facebook,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter,
+                'pinterest' => $request->pinterest,
+                'created_at'=> Carbon::now()
+            ]);
+
+            $notification = array(
+                'message' => 'Team is Updated Successfully without Image',
+                'alert-type' =>'success'
+            );
+    
+            return redirect()->route('all.team')->with($notification);
+        }
+
     }
 }

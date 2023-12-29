@@ -60,6 +60,6 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::get('/team/add', 'addTeam')->name('team.add');
         Route::get('/team/edit/{id}', 'editTeam')->name('team.edit');
         Route::post('/team/store', 'storeTeam')->name('team.store');
-        Route::post('/team/update', 'storeTeam')->name('team.update');
+        Route::post('/team/update', 'updateTeam')->name('team.update');
     });
 });

@@ -1,8 +1,10 @@
 @extends('admin.admin_dashboard');
 @section('admin')
     <h5 class="mb-4">Add Team</h5>
-    <form action="{{route('team.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('team.update')}}" method="post" enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="id" id="id" value="{{$team->id}}">
+
         <div class="row mb-3">
             <label for="name" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
@@ -18,7 +20,7 @@
         <div class="row mb-3">
             <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
             <div class="col-sm-9">
-                <input type="url" class="form-control" name="facebook" id="facebook" value="{{$team->position}}">
+                <input type="url" class="form-control" name="facebook" id="facebook" value="{{$team->facebook}}">
             </div>
         </div>
         <div class="row mb-3">
