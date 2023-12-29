@@ -16,6 +16,13 @@
         <li> <a href="#"><i class='bx bx-home-alt'></i>Dashboard</a>
         </li>
         <li>
+            <a href="{{route('all.team')}}">
+                <div class="parent-icon"><i class="bx bx-support"></i>
+                </div>
+                <div class="menu-title">Team</div>
+            </a>
+        </li>
+        <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
