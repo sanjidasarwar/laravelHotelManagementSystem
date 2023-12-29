@@ -21,6 +21,11 @@ class TeamController extends Controller
         return view('backend.team.create');
     }
 
+    public function editTeam($id){
+        $team =Team::find($id);
+        return view('backend.team.edit', compact('team'));
+    }
+
     public function storeTeam(Request $request){
         if($request->file('image')){
             $file =$request->file('image');

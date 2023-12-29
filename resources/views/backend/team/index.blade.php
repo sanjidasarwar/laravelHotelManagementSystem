@@ -40,9 +40,9 @@
                             <td>{{$item->pinterest}}</td>
                             <td>
                                 <div class="col">
-                                    <button type="button" class="btn btn-outline-primary"><i
+                                    <a href="{{route('team.edit', $item->id)}}" type="button" class="btn btn-outline-primary"><i
                                             class="bx bx-blanket me-0"></i>
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-danger"><i class="bx bx-blanket me-0"></i>
