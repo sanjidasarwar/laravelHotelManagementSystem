@@ -103,4 +103,18 @@ class TeamController extends Controller
         }
 
     }
+
+    public function deleteTeam($id){
+        $team =Team::findOrFail($id);
+        $img=$team->image;
+        unlink($img);
+
+        $team->delete(); 
+        $notification = array(
+            'message' => 'Team is Successfully Deleted',
+            'alert-type' =>'danger'
+        );
+
+        return redirect()->route('all.team')->with($notification);
+    }
 }

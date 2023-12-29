@@ -45,8 +45,8 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <button type="button" class="btn btn-outline-danger"><i class="bx bx-blanket me-0"></i>
-                                    </button>
+                                    <a href="{{route('team.delete', $item->id)}}" type="button" class="btn btn-outline-danger"><i class="bx bx-blanket me-0"></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
