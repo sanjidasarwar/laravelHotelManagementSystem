@@ -13,7 +13,8 @@ use App\Models\Team;
 class TeamController extends Controller
 {
     public function allTeam(){
-        return view('backend.team.index');
+        $team= Team::latest()->get(); 
+        return view('backend.team.index', compact('team'));
     }
 
     public function addTeam(){

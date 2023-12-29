@@ -16,6 +16,7 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
+                            <th>Sl No.</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Position</th>
@@ -27,14 +28,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($team as $key=>$item)   
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                            <td>$320,800</td>
+                            <td>{{$key+1}}</td>
+                            <td><img src="{{asset($item->image)}}" alt="" class="w-75 h-75"></td>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->position}}</td>
+                            <td>{{$item->facebook}}</td>
+                            <td>{{$item->twitter}}</td>
+                            <td>{{$item->instagram}}</td>
+                            <td>{{$item->pinterest}}</td>
                             <td>
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-primary"><i
@@ -47,6 +50,7 @@
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
