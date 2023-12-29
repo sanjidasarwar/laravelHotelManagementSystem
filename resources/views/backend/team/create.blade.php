@@ -1,7 +1,8 @@
 @extends('admin.admin_dashboard');
 @section('admin')
     <h5 class="mb-4">Add Team</h5>
-    <form action="" method="post">
+    <form action="{{route('team.store')}}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="row mb-3">
             <label for="name" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
@@ -42,7 +43,7 @@
         <div class="row mb-3">
             <label for="input40" class="col-sm-3 col-form-label">Image</label>
             <div class="col-sm-9">
-                <input id="uploadImg" type="file" name="photo" class="form-control" onchange="previewImage(event)"/>
+                <input id="uploadImg" type="file" name="image" class="form-control" onchange="previewImage(event)"/>
             </div>
         </div>
         <div class="row mb-3">
