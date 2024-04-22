@@ -12,6 +12,9 @@
 	<link href="{{asset("backend/assets/plugins/simplebar/css/simplebar.css")}}" rel="stylesheet" />
 	<link href="{{asset("backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css")}}" rel="stylesheet" />
 	<link href="{{asset("backend/assets/plugins/metismenu/css/metisMenu.min.css")}}" rel="stylesheet"/>
+
+	<!-- datatable css -->
+	<link href="{{asset("backend/assets/plugins/datatable/css/dataTables.bootstrap5.min.css")}}" rel="stylesheet" />
 	<!-- loader-->
 	<link href="{{asset("backend/assets/css/pace.min.css")}}" rel="stylesheet"/>
 	<script src="{{asset("backend/assets/js/pace.min.js")}}"></script>
@@ -214,6 +217,10 @@
 	<script src="{{asset("backend/assets/js/jquery.min.js")}}"></script>
 	<script src="{{asset("backend/assets/plugins/simplebar/js/simplebar.min.js")}}"></script>
 	<script src="{{asset("backend/assets/plugins/metismenu/js/metisMenu.min.js")}}"></script>
+	{{-- data table --}}
+	<script src="{{asset("backend/assets/plugins/datatable/js/jquery.dataTables.min.js")}}"></script>
+	<script src="{{asset("backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js")}}"></script>
+
 	<script src="{{asset("backend/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js")}}"></script>
 	<script src="{{asset("backend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js")}}"></script>
     <script src="{{asset("backend/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js")}}"></script>
@@ -257,6 +264,7 @@
 	 }
 	 @endif 
 	</script>
+	
 </body>
 
 </html>

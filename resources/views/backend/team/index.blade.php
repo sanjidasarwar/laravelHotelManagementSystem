@@ -1,9 +1,10 @@
 @extends('admin.admin_dashboard');
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <div>
         <div class="ms-auto">
             <div class="col">
-                <a href="{{route('team.add')}}" type="button" class="btn btn-outline-primary"><i class="bx bx-user me-0"></i>
+                <a href="{{route('team.add')}}" type="button" class="btn btn-outline-primary">Add Team
                 </a>
             </div>
         </div>
@@ -40,12 +41,12 @@
                             <td>{{$item->pinterest}}</td>
                             <td>
                                 <div class="col">
-                                    <a href="{{route('team.edit', $item->id)}}" type="button" class="btn btn-outline-primary"><i
-                                            class="bx bx-blanket me-0"></i>
+                                    <a href="{{route('team.edit', $item->id)}}" type="button" class="btn btn-outline-primary">
+                                        Edit
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="{{route('team.delete', $item->id)}}" type="button" class="btn btn-outline-danger" id="delete"><i class="bx bx-blanket me-0"></i>
+                                    <a href="{{route('team.delete', $item->id)}}" type="button" class="btn btn-outline-danger" id="delete">Delete
                                     </a>
                                 </div>
                             </td>
@@ -56,4 +57,10 @@
             </div>
         </div>
     </div>
+<!--data table js-->
+    <script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
 @endsection

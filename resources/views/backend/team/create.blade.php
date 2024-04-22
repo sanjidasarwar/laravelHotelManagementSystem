@@ -12,51 +12,51 @@
         </div>
         <div class="row mb-3">
             <label for="position" class="col-sm-3 col-form-label">Position</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input type="text" class="form-control" name="position" id="position" placeholder="Position">
             </div>
         </div>
         <div class="row mb-3">
             <label for="facebook" class="col-sm-3 col-form-label">Facebook</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input type="url" class="form-control" name="facebook" id="facebook" placeholder="Facebook URL">
             </div>
         </div>
         <div class="row mb-3">
             <label for="twitter" class="col-sm-3 col-form-label">Twitter</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input type="text" class="form-control" name="twitter" id="twitter" placeholder="Twitter URL">
             </div>
         </div>
         <div class="row mb-3">
             <label for="instagram" class="col-sm-3 col-form-label">Instagram</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input type="text" class="form-control" name="instagram" id="instagram" placeholder="Instagram URL">
             </div>
         </div>
         <div class="row mb-3">
             <label for="pinterest" class="col-sm-3 col-form-label">Pinterest</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input type="text" class="form-control" name="pinterest" id="pinterest" placeholder="Pinterest URL">
             </div>
         </div>
 
         <div class="row mb-3">
             <label for="input40" class="col-sm-3 col-form-label">Image</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <input id="uploadImg" type="file" name="image" class="form-control" onchange="previewImage(event)" />
             </div>
         </div>
         <div class="row mb-3">
             <label for="input40" class="col-sm-3 col-form-label">Image</label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <img id="preview" src="{{ url('upload/no_image.jpg') }}" alt="team"
                     class="rounded-circle p-1 bg-primary" width="80">
             </div>
         </div>
         <div class="row">
             <label class="col-sm-3 col-form-label"></label>
-            <div class="col-sm-9">
+            <div class="col-sm-9 form-group">
                 <div class="d-md-flex d-grid align-items-center gap-3">
                     <button type="submit" class="btn btn-primary px-4">Submit</button>
                 </div>
@@ -71,7 +71,7 @@
                     name: {
                         required: true,
                     },
-                    postion: {
+                    position: {
                         required: true,
                     },
                     facebook: {
@@ -86,7 +86,7 @@
                     name: {
                         required: 'Please Enter Name',
                     },
-                    postion: {
+                    position: {
                         required: 'Please Enter Team Postion',
                     },
                     facebook: {
