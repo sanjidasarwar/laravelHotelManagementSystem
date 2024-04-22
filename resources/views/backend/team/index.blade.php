@@ -4,7 +4,7 @@
     <div>
         <div class="ms-auto">
             <div class="col">
-                <a href="{{route('team.add')}}" type="button" class="btn btn-outline-primary">Add Team
+                <a href="{{route('team.add')}}" type="button" class="btn btn-outline-primary radius-30 mb-3">Add Team
                 </a>
             </div>
         </div>
@@ -39,14 +39,14 @@
                             <td>{{$item->twitter}}</td>
                             <td>{{$item->instagram}}</td>
                             <td>{{$item->pinterest}}</td>
-                            <td>
+                            <td class="d-flex">
                                 <div class="col">
-                                    <a href="{{route('team.edit', $item->id)}}" type="button" class="btn btn-outline-primary">
+                                    <a href="{{route('team.edit', $item->id)}}" type="button" class="btn btn-warning radius-30 me-2">
                                         Edit
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="{{route('team.delete', $item->id)}}" type="button" class="btn btn-outline-danger" id="delete">Delete
+                                    <a href="{{route('team.delete', $item->id)}}" type="button" class="btn btn-danger radius-30" id="delete">Delete
                                     </a>
                                 </div>
                             </td>
