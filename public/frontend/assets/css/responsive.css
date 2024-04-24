@@ -98,8 +98,6 @@
   }
   .side-nav-responsive .container {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .side-nav-responsive .container .container {
@@ -110,10 +108,8 @@
     margin-left: auto;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: 0.7s;
     transition: 0.7s;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    transform: scaleX(0);
     z-index: 2;
     padding-left: 15px;
     padding-right: 15px;
@@ -125,8 +121,7 @@
   /* Navbar CSS End */
   /* Main Banner CSS End */
   .banner-area::before {
-    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff4a));
-    background-image: linear-gradient(to right, #ffffff, #ffffff4a);
+    background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.2901960784));
   }
   .banner-content {
     padding: 140px 0 80px;
@@ -383,13 +378,11 @@
   }
   .room-details-slider .owl-nav .owl-prev {
     top: 41%;
-    -webkit-transform: translateY(-35%);
-            transform: translateY(-35%);
+    transform: translateY(-35%);
   }
   .room-details-slider .owl-nav .owl-next {
     top: 41%;
-    -webkit-transform: translateY(-35%);
-            transform: translateY(-35%);
+    transform: translateY(-35%);
   }
   /* Room Area CSS End */
   /* Testimonials Area CSS */
@@ -657,7 +650,6 @@
     text-align: center;
   }
 }
-
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .header-right ul li {
     margin-right: 10px;
@@ -705,7 +697,6 @@
     float: none;
   }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* Default CSS */
   body {
@@ -809,8 +800,6 @@
   }
   .side-nav-responsive .container {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .side-nav-responsive .container .container {
@@ -821,10 +810,8 @@
     margin-left: auto;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: 0.7s;
     transition: 0.7s;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    transform: scaleX(0);
     z-index: 2;
     padding-left: 15px;
     padding-right: 15px;
@@ -832,8 +819,7 @@
   /* Navbar CSS End */
   /* Main Banner CSS */
   .banner-area::before {
-    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff4a));
-    background-image: linear-gradient(to right, #ffffff, #ffffff4a);
+    background-image: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.2901960784));
   }
   .banner-content {
     padding: 140px 0 140px;
@@ -1167,7 +1153,6 @@
     margin-right: 2px;
   }
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-title h2 {
     font-size: 26px;
@@ -1286,7 +1271,6 @@
     padding-left: 25px;
   }
 }
-
 @media only screen and (min-width: 1350px) and (max-width: 1699px) {
   .container {
     max-width: 1320px !important;
@@ -1353,7 +1337,7 @@
     margin-right: 70px;
   }
   .ability-img::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     right: -70px;
@@ -1388,7 +1372,6 @@
     margin-left: 30px;
   }
 }
-
 @media only screen and (min-width: 1700px) {
   .container {
     max-width: 1440px !important;
@@ -1457,7 +1440,6 @@
     font-size: 24px;
   }
 }
-
 @media only screen and (min-width: 1800px) {
   .banner-another .banner-shape img {
     height: 535px;
@@ -1465,5 +1447,4 @@
   .book-img .book-shape img {
     height: 475px;
   }
-}
-/*# sourceMappingURL=responsive.css.map */
+}/*# sourceMappingURL=responsive.css.map */

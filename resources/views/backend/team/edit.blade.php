@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="row mb-3">
-            <label for="input40" class="col-sm-3 col-form-label">Image</label>
+            <label for="input40" class="col-sm-3 col-form-label"></label>
             <div class="col-sm-9">
                 <img id="preview" src="{{!empty($team->image) ? url($team->image) : url('upload/no_image.jpg')}}" alt="team" class="rounded-circle p-1 bg-primary" width="80">
             </div>
