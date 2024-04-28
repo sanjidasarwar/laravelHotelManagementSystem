@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\RoomTypeController;
  
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +64,20 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
         Route::post('/team/update', 'updateTeam')->name('team.update');
         Route::get('/team/delete/{id}', 'deleteTeam')->name('team.delete');
     });
+
+    // Book Area
+
     Route::controller(TeamController::class)->group(function(){
         Route::get('/book/area', 'bookArea')->name('book.area');
         Route::post('/book/area/update', 'updateBookArea')->name('book.area.update');
     });
+
+    // Room Type
+
+    Route::controller(RoomTypeController::class)->group(function(){
+        Route::get('/room/type/list', 'roomTypeList')->name('room.type.list');
+        Route::get('/room/type/add', 'addRoomType')->name('room.type.add');
+        Route::post('/room/type/store', 'storeRoomType')->name('room.type.store');
+    });
+
 });
